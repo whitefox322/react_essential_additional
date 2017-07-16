@@ -1,0 +1,54 @@
+.timer {
+   display: inline-block;
+   text-align: center;
+   margin-top: 150px;
+   font-family: sans-serif;
+   font-size: 50px;
+
+   &__btn {
+      display: inline-block;
+      margin: 10px;
+      border: none;
+      border-radius: 15px;
+      background: #00b3ee;
+      color: #ffffff;
+
+      &--play {
+         padding: 20px 15px 5px 25px;
+         background: #4cae4c;
+
+         &:focus,
+         &:hover,
+         &:active {
+            outline: none !important;
+         }
+      }
+
+      &--pause {
+         background: #eea236;
+      }
+
+      &--refresh,
+      &--pause {
+         padding: 20px 20px 5px 20px;
+
+         &:focus,
+         &:hover,
+         &:active {
+            outline: none !important;
+         }
+      }
+
+      &:focus,
+      &:hover,
+      &:active {
+         outline: none !important;
+      }
+   }
+
+   &__text {
+      display: inline-block;
+      margin: 10px;
+      font-weight: 700;
+   }
+}

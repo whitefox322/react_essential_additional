@@ -1,0 +1,49 @@
+.timer {
+  display: inline-block;
+  text-align: center;
+  margin-top: 150px;
+  font-family: sans-serif;
+  font-size: 50px;
+}
+.timer__btn {
+  display: inline-block;
+  margin: 10px;
+  border: none;
+  border-radius: 15px;
+  background: #00b3ee;
+  color: #ffffff;
+}
+.timer__btn--play {
+  padding: 20px 15px 5px 25px;
+  background: #4cae4c;
+}
+.timer__btn--play:focus,
+.timer__btn--play:hover,
+.timer__btn--play:active {
+  outline: none !important;
+}
+.timer__btn--pause {
+  background: #eea236;
+}
+.timer__btn--refresh,
+.timer__btn--pause {
+  padding: 20px 20px 5px 20px;
+}
+.timer__btn--refresh:focus,
+.timer__btn--pause:focus,
+.timer__btn--refresh:hover,
+.timer__btn--pause:hover,
+.timer__btn--refresh:active,
+.timer__btn--pause:active {
+  outline: none !important;
+}
+.timer__btn:focus,
+.timer__btn:hover,
+.timer__btn:active {
+  outline: none !important;
+}
+.timer__text {
+  display: inline-block;
+  margin: 10px;
+  font-weight: 700;
+}
