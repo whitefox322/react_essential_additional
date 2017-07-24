@@ -90,7 +90,6 @@ body {
   color: #ffffff;
   font-size: 14px;
   padding: 8px 8px;
-  margin-top: -35px;
   text-transform: uppercase;
   text-decoration: none;
   text-shadow: 0px 1px 0px #2f6627;
@@ -118,19 +117,47 @@ body {
   color: grey;
   text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.5);
 }
-
 .notes-colors {
   display: inline-block;
 }
-
 .color-span {
   display: inline-block;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  margin: 5px;
+  margin: 5px 5px -30px 5px;
 }
-
 .icon-span {
   margin: 6px 0 0 8px;
+}
+.search {
+  text-align: center;
+}
+.note-search {
+  display: inline-block;
+  width: 300px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  margin: 5px;
+  font-size: 14px;
+}
+.input-icon {
+  display: inline-block;
+  width: 5%;
+  font-size: 18px;
+  margin-right: 3px;
+  padding: 3px;
+}
+.input {
+  display: inline-block;
+  width: 90%;
+  margin: 5px;
+  padding: 3px;
+  font-size: 14px;
+  border: none;
+  border-radius: 15px;
+  font-weight: 300;
+}
+.input:focus {
+  outline: 0;
 }

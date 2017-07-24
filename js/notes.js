@@ -4,7 +4,7 @@ var Colors = React.createClass({
         var style = {backgroundColor: this.props.color};
         var span = "glyphicon glyphicon-ok icon-span";
 
-        if(pick !== this.props.color) {
+        if (pick !== this.props.color) {
             span = "glyphicon glyphicon-tint icon-span";
         }
 
@@ -24,6 +24,21 @@ var Note = React.createClass({
             <div className="note" style={style}>
                 <span className="delete-note" onClick={this.props.onDelete}> × </span>
                 {this.props.children}
+            </div>
+        );
+    }
+});
+
+var NoteSearch = React.createClass({
+    render: function () {
+        return (
+            <div className="search">
+                <div className="note-search">
+                    <div className="input-icon">
+                        <span className="glyphicon glyphicon-search"></span>
+                    </div>
+                    <input type="text" className="input" placeholder="Search..." onChange={this.props.onSearch}/>
+                </div>
             </div>
         );
     }
@@ -148,19 +163,25 @@ var NotesApp = React.createClass({
             }, {
                 id: 4,
                 color: "#5F9EA0"
-            }]
+            }],
+            toUpdate: true
         };
     },
 
     componentDidMount: function () {
         var localNotes = JSON.parse(localStorage.getItem('notes'));
         if (localNotes) {
-            this.setState({notes: localNotes});
+            this.setState({
+                notes: localNotes,
+                toUpdate: true
+            });
         }
     },
 
     componentDidUpdate: function () {
-        this._updateLocalStorage();
+        if(this.state.toUpdate) {
+            this._updateLocalStorage();
+        }
     },
 
     handleNoteDelete: function (note) {
@@ -168,19 +189,41 @@ var NotesApp = React.createClass({
         var newNotes = this.state.notes.filter(function (note) {
             return note.id !== noteId;
         });
-        this.setState({notes: newNotes});
+        this.setState({
+            notes: newNotes,
+            toUpdate: true
+        });
     },
 
     handleNoteAdd: function (newNote) {
         var newNotes = this.state.notes.slice();
         newNotes.unshift(newNote);
-        this.setState({notes: newNotes});
+        this.setState({
+            notes: newNotes,
+            toUpdate: true
+        });
+        console.log();
+    },
+
+    handleSearch: function(e) {
+        var searchQuery = e.target.value.toLowerCase();
+        var newNotes = JSON.parse(localStorage.getItem('notes'));
+        var displayedNotes = newNotes.filter(function (element) {
+            var searchValue = element.text.toLowerCase();
+            return searchValue.indexOf(searchQuery) !== -1;
+        });
+
+        this.setState({
+            notes: displayedNotes,
+            toUpdate: false
+        });
     },
 
     render: function () {
         return (
             <div className="notes-app">
                 <h2 className="app-header">NotesApp</h2>
+                <NoteSearch notes={this.state.notes} onSearch={this.handleSearch} />
                 <NoteEditor colors={this.state.colors} onNoteAdd={this.handleNoteAdd}/>
                 <NotesGrid notes={this.state.notes} onNoteDelete={this.handleNoteDelete}/>
             </div>

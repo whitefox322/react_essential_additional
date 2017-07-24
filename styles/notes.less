@@ -29,7 +29,7 @@ body {
   height: auto;
   float: left;
   background-color: yellow;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 2px;
   padding: 10px;
   margin-bottom: 10px;
@@ -40,15 +40,15 @@ body {
 }
 
 .note:hover {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .delete-note {
   position: absolute;
-  top:5px;
-  right:5px;
+  top: 5px;
+  right: 5px;
   display: none;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
 
@@ -62,7 +62,7 @@ body {
   padding: 16px;
   margin: 16px auto;
   background-color: white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 2px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -93,25 +93,25 @@ body {
   -ms-flex-item-align: end;
   align-self: flex-end;
   width: 100px;
-  background-color:#44c767;
-  border-radius:28px;
-  border:1px solid #18ab29;
-  cursor:pointer;
-  color:#ffffff;
-  font-size:14px;
-  padding:8px 8px;
+  background-color: #44c767;
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 8px 8px;
   text-transform: uppercase;
-  text-decoration:none;
-  text-shadow:0px 1px 0px #2f6627;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
 }
 
 .add-button:hover {
-  background-color:#5cbf2a;
+  background-color: #5cbf2a;
 }
 
 .add-button:active {
-  position:relative;
-  top:1px;
+  position: relative;
+  top: 1px;
 }
 
 .add-button:focus {
@@ -131,7 +131,7 @@ body {
   text-align: center;
   font-weight: 500;
   color: grey;
-  text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.5);
 }
 
 .notes-colors {
@@ -148,4 +148,40 @@ body {
 
 .icon-span {
   margin: 6px 0 0 8px;
+}
+
+.search {
+  text-align: center;
+}
+
+.note-search {
+  display: inline-block;
+  width: 300px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.input-icon {
+  display: inline-block;
+  width: 5%;
+  font-size: 18px;
+  margin-right: 3px;
+  padding: 3px;
+}
+
+.input {
+  display: inline-block;
+  width: 90%;
+  margin: 5px;
+  padding: 3px;
+  font-size: 14px;
+  border: none;
+  border-radius: 15px;
+  font-weight: 300;
+}
+
+.input:focus {
+  outline: 0;
 }
